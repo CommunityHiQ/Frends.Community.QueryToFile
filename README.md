@@ -1,20 +1,23 @@
-# Frends.Community.SQL.QueryToFile
-Frends task for writing SQL query results to CSV file.
+# Frends.Community.SQL
+
+FRENDS Community Task for SQL query results to CSV-file
+
+[![Actions Status](https://github.com/CommunityHiQ/Frends.Community.SQL/workflows/PackAndPushAfterMerge/badge.svg)](https://github.com/CommunityHiQ/Frends.Community.SQL/actions) ![MyGet](https://img.shields.io/myget/frends-community/v/Frends.Community.SQL) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 - [Installing](#installing)
 - [Tasks](#tasks)
-  - [SaveQueryToCSV](#SaveQueryToCSV)
+     - [SaveQueryToCSV](#SaveQueryToCSV)
 - [License](#license)
 - [Building](#building)
 - [Contributing](#contributing)
 - [Change Log](#change-log)
 
 # Installing
-You can install the task via FRENDS UI Task View or you can find the nuget package from the following nuget feed
-'Nuget feed coming at later date'
 
-Tasks
-=====
+You can install the task via FRENDS UI Task View or you can find the NuGet package from the following NuGet feed
+https://www.myget.org/F/frends-community/api/v3/index.json and in Gallery view in MyGet https://www.myget.org/feed/frends-community/package/nuget/Frends.Community.SQL
+
+# Tasks
 
 ## SaveQueryToCSV
 
@@ -27,7 +30,6 @@ Tasks
 | TimeoutSeconds | int | Timeout in seconds | 30 |
 | OutputFilePath | string | CSV file path for output | `C:\output\path.csv` |
 | QueryParameters | SQLParameter[] | Query parameters | `[ { "@Param1", "Value1" }, { "@Param2", "Value2" }]`
-
 
 ### Options
 
@@ -49,7 +51,8 @@ Settings for included attachments
 ### Notes
 Newlines in text fields are replaced with spaces.
 
-### Result
+### Returns
+
 Result contains the amount of lines written to output CSV.
 
 # License
@@ -60,7 +63,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Clone a copy of the repo
 
-`git clone https://github.com/CommunityHiQ/Frends.Community.SQL.QueryToFile.git`
+`git clone https://github.com/CommunityHiQ/Frends.Community.SQL.git`
 
 Restore dependencies
 
@@ -70,11 +73,11 @@ Rebuild the project
 
 Run Tests with MSTest. Tests can be found under
 
-`Frends.Community.SQL.QueryToFile.Tests\bin\Release\Frends.Community.SQL.QueryToFile.dll`
+`Frends.Community.SQL.Tests\bin\Release\Frends.Community.SQL.dll`
 
 Create a nuget package
 
-`nuget pack Frends.Community.SQL.QueryToFile.nuspec`
+`nuget pack Frends.Community.SQL.nuspec`
 
 # Contributing
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
@@ -93,3 +96,4 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 | ---------------------| ---------------------|
 | 1.0.0 | Initial version of SaveQueryToCSV task |
 | 1.1.0 | Added options for destination file encoding. |
+| 1.1.1 | Converted to support .Net Framework 4.7.1 and .Net Standard 2.0. Renamed task. |
